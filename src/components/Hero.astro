@@ -2,11 +2,29 @@
 // Información del Dr. Guillermo Terrado y su especialización
 ---
 
-<section id="hero">
-  <img src="/ruta-a-la-foto-del-dr.jpg" alt="Dr. Guillermo Terrado" />
-  <h1>Dr. Guillermo Terrado Gil</h1>
-  <p>
-    Especialista en Medicina Reproductiva, Tocoginecología y Ultrasonografía
-  </p>
-  <button><a href="#contact">Reservar Consulta</a></button>
+<section
+  id="hero"
+  class="grid grid-cols-2 grid-rows-1 gap-10 text-center items-center bg-blue-500 p-10 place-items-center"
+>
+  <div class="col-start-2 row-start-1">
+    <img
+      src="img/portrait.jpeg"
+      alt="Dr. Guillermo Terrado"
+      class="rounded-full mb-4 items-center align-middle"
+    />
+  </div>
+  <div class="flex col-start-1 flex-col">
+    <h1 class="text-4xl font-bold text-white">Dr. Guillermo Terrado Gil</h1>
+    <p class="text-xl text-white mt-2">
+      Médico ginecólogo
+      <br />Especialista en Medicina Reproductiva
+      <br />Preservación de Fertilidad
+    </p>
+    <a
+      href="#contact"
+      class="mt-4 px-4 py-2 bg-white text-blue-500 rounded transition hover:scale-110 hover:bg-blue-100"
+    >
+      Reservar Consulta
+    </a>
+  </div>
 </section>
