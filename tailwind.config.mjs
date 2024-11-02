@@ -4,5 +4,13 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities }) {
+		  addUtilities({
+			'.hover-effect': {
+			 '@apply transition hover:opacity-85 hover:scale-150': {}
+			}
+		  })
+		}
+	  ],
 }
