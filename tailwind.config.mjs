@@ -15,8 +15,11 @@ export default {
 	plugins: [
 		function ({ addUtilities }) {
 		  addUtilities({
-			'.hover-effect': {
+			'.hover-scale': {
 			 '@apply transition hover:opacity-85 hover:scale-150': {}
+			},
+			'.hover-effect': {
+			 '@apply transition hover:opacity-85': {}
 			}
 		  })
 		}
