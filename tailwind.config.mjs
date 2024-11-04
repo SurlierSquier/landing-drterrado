@@ -6,6 +6,8 @@ export default {
 			colors: {
 				'custom-start': '#454f84',
 				'custom-end': '#35bdb5',
+				'custom-top': '#039DE8',
+				'custom-bot': '#EFF6FF'
 			  },
 			borderRadius:{
 				'4xl':'2rem',
