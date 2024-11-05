@@ -27,18 +27,14 @@ import sonografiaImage from "../../public/img/sonografia.png";
     </div>
 
     <!-- Imagen principal con efecto de sombra mejorado -->
-    <div
-      class="mb-16 flex justify-center px-4 transform hover:scale-[1.02] transition-transform duration-300"
-    >
-      <Image
-        src={sonografiaImage}
-        alt="Sonografia"
-        class="w-full max-w-sm md:max-w-2xl lg:max-w-4xl h-auto object-cover rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]"
-        widths={[300, 600, 1200]}
-        sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
-        format="png"
-      />
-    </div>
+    <Image
+      src={sonografiaImage}
+      alt="Sonografia"
+      class="mb-16 mx-auto w-full max-w-sm md:max-w-2xl lg:max-w-4xl h-auto object-cover rounded-xl shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] hover:scale-[1.02] transition-transform duration-300"
+      widths={[300, 600, 1200]}
+      sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
+      format="png"
+    />
 
     <!-- Tarjetas informativas -->
     <div
