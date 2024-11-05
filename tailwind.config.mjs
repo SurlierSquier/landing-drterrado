@@ -7,7 +7,8 @@ export default {
 				'custom-start': '#454f84',
 				'custom-end': '#35bdb5',
 				'custom-top': '#039DE8',
-				'custom-bot': '#EFF6FF'
+				'custom-bot': '#EFF6FF',
+				'blue-700-70': 'rgba(29, 78, 216, 0.7)',
 			  },
 			borderRadius:{
 				'4xl':'2rem',
