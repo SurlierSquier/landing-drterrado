@@ -1,40 +1,102 @@
-<section id="centros" class="bg-[#fff] py-8 md:py-10 lg:py-12">
-  <div class="container mx-auto text-center px-4">
-    <h2
-      class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-4 md:mb-6"
-    >
-      Centros donde encontrarme
-    </h2>
+<section
+  id="centros"
+  class="bg-gradient-to-b from-gray-50 to-white py-16 md:py-20"
+>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent mb-4"
+      >
+        Centros donde encontrarme
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+        Clínicas especializadas en medicina reproductiva con tecnología de
+        vanguardia
+      </p>
+    </div>
 
-    <div
-      class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-10 mx-auto"
-    >
-      <a
-        href="https://www.irema.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="transform hover:scale-105 transition-transform duration-300"
-      >
-        <img
-          src="/img/logoIrema.webp"
-          alt="Irema"
-          class="h-24 md:h-28 lg:h-32"
-          loading="lazy"
-        />
-      </a>
-      <a
-        href="https://fertilitybenidorm.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="transform hover:scale-105 transition-transform duration-300"
-      >
-        <img
-          src="/img/logoFertilityBenidorm.png"
-          alt="Fertility Benidorm"
-          class="h-24 md:h-28 lg:h-32"
-          loading="lazy"
-        />
-      </a>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {
+          [
+            {
+              name: "Irema",
+              logo: "/img/logoIrema.webp",
+              url: "https://www.irema.org/",
+              description: "Centro de Medicina Reproductiva",
+              location: "Gandia y Beniarbeig, España",
+            },
+            {
+              name: "Fertility Benidorm",
+              logo: "/img/logoFertilityBenidorm.png",
+              url: "https://fertilitybenidorm.com/",
+              description: "Clínica de Reproducción Asistida",
+              location: "Benidorm, España",
+            },
+          ].map((centro) => (
+            <a
+              href={centro.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group"
+            >
+              <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="relative mb-6 flex justify-center">
+                  <div class="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
+                  <img
+                    src={centro.logo}
+                    alt={centro.name}
+                    class="h-28 md:h-32 lg:h-36 object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+
+                <div class="text-center">
+                  <h3 class="text-lg md:text-xl font-semibold text-gray-800 mb-2">
+                    {centro.description}
+                  </h3>
+                  <p class="text-blue-600 flex items-center justify-center gap-2">
+                    <svg
+                      class="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                    {centro.location}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .shadow-md {
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-xl {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+</style>

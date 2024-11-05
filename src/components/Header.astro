@@ -1,34 +1,156 @@
 ---
-// Añade enlaces a secciones como "Inicio", "Servicios", "Testimonios"
+const menuItems = [
+  { href: "#sobre-mi", label: "Sobre Mí" },
+  { href: "#services", label: "Servicios" },
+  { href: "#testimonials", label: "Testimonios" },
+  { href: "#centros", label: "Centros" },
+  { href: "#contact", label: "Contacto" },
+];
 ---
 
-<header class="flex items-center justify-center max-w-full bg-transparent px-4">
-  <nav
-    class="w-full md:w-3/4 lg:w-1/2 h-14 flex items-center justify-evenly m-4 bg-[rgba(255,255,255,0.2)] rounded-full"
-  >
-    <!-- <a
-      href="#hero"
-      class="rounded-full text-[#ffffff] hover-underline hover-scale px-3 py-1"
+<header class="fixed z-50 md:top-0 md:left-0 md:right-0 md:px-4 md:py-4">
+  <nav class="md:max-w-6xl mx-auto">
+    <!-- Versión móvil (círculo flotante) -->
+    <div class="md:hidden fixed top-4 right-4">
+      <div class="relative">
+        <button
+          class="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-lg hover:bg-white/20 transition-all duration-300"
+          aria-label="Menú"
+          id="menu-button-mobile"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+
+        <div
+          id="mobile-menu"
+          class="hidden absolute top-full right-0 mt-2 w-48 rounded-xl bg-white/90 backdrop-blur-md shadow-xl border border-white/20"
+        >
+          {
+            menuItems.map((item) => (
+              <a
+                href={item.href}
+                class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-300 first:rounded-t-xl last:rounded-b-xl"
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Versión desktop -->
+    <div
+      class="hidden md:block backdrop-blur-md bg-white/10 border border-white/10 rounded-full shadow-lg"
     >
-      Inicio
-    </a>-->
-    <a
-      href="#services"
-      class="text-sm md:text-base rounded-full text-[#ffffff] hover-underline hover-scale px-2 md:px-3 py-1"
-    >
-      Servicios
-    </a>
-    <a
-      href="#testimonials"
-      class="text-sm md:text-base rounded-full text-[#ffffff] hover-underline hover-scale px-2 md:px-3 py-1"
-    >
-      Testimonios
-    </a>
-    <a
-      href="#contact"
-      class="text-sm md:text-base rounded-full text-[#ffffff] hover-underline hover-scale px-2 md:px-3 py-1"
-    >
-      Contacto
-    </a>
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center h-14">
+          <div class="flex items-center justify-center gap-2">
+            {
+              menuItems.map((item) => (
+                <a
+                  href={item.href}
+                  class="relative text-white hover:text-white/90 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:bg-white/10 group"
+                >
+                  {item.label}
+                  <span class="absolute bottom-1 left-1/2 w-0 h-0.5 bg-white transform -translate-x-1/2 group-hover:w-1/2 transition-all duration-300" />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>
+
+<style>
+  header {
+    transition: all 0.3s ease;
+  }
+
+  header.scrolled {
+    @apply md:bg-white/10 md:backdrop-blur-md;
+  }
+
+  #mobile-menu.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  const header = document.querySelector("header");
+  const menuButton = document.getElementById("menu-button-mobile");
+  const mobileMenu = document.getElementById("mobile-menu");
+  let menuOpen = false;
+
+  // Manejo del scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      header?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+    }
+  });
+
+  // Toggle del menú móvil
+  menuButton?.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu?.classList.add("show");
+    } else {
+      mobileMenu?.classList.remove("show");
+    }
+  });
+
+  // Cerrar menú al hacer click fuera
+  document.addEventListener("click", (e) => {
+    if (
+      !menuButton?.contains(e.target as Node) &&
+      !mobileMenu?.contains(e.target as Node)
+    ) {
+      menuOpen = false;
+      mobileMenu?.classList.remove("show");
+    }
+  });
+
+  // Navegación suave
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e: Event) {
+      e.preventDefault();
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
+      if (href) {
+        const target = document.querySelector(href);
+        menuOpen = false;
+        mobileMenu?.classList.remove("show");
+        target?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+</script>
