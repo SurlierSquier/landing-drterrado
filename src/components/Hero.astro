@@ -6,28 +6,36 @@ import portraitDrImage from "../../public/img/portraitDr.png"; // Ajusta la ruta
 
 <section
   id="hero"
-  class="relative grid grid-cols-2 grid-rows-1 gap-10 text-center items-center bg-transparent px-10 place-items-center"
+  class="relative grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 text-center items-center bg-transparent px-4 md:px-10 place-items-center"
 >
-  <div class="flex col-start-1 flex-col mx-5">
-    <h1 class="text-6xl text-left font-bold text-white pb-5">
+  <div class="flex flex-col mx-2 md:mx-5 order-2 md:order-1">
+    <h1
+      class="text-4xl md:text-5xl lg:text-6xl text-center md:text-left font-bold text-white pb-3 md:pb-5"
+    >
       Dr. Guillermo Terrado
     </h1>
-    <p class="text-left text-base text-white max-w-xl mt-2 pb-5">
+    <p
+      class="text-center md:text-left text-sm md:text-base text-white max-w-xl mt-2 pb-3 md:pb-5"
+    >
       Médico especialista en Medicina Reproductiva con más de 30 años de
       experiencia ayudando a parejas a cumplir su sueño de ser padres.
     </p>
-    <a
-      href="#contact"
-      class="max-w-56 mt-4 px-4 py-2 bg-white text-[#454f84] rounded-full transition hover:bg-blue-100 hover:shadow-xl"
-    >
-      <strong>Reservar Consulta</strong>
-    </a>
+    <div class="flex justify-center md:justify-start">
+      <a
+        href="#contact"
+        class="max-w-56 mt-4 px-4 py-2 bg-white text-[#454f84] rounded-full transition hover:bg-blue-100 hover:shadow-xl"
+      >
+        <strong>Reservar Consulta</strong>
+      </a>
+    </div>
   </div>
-  <div class="col-start-2 row-start-1 relative">
+  <div
+    class="order-last items-baseline md:order-2 relative w-full max-w-sm md:max-w-md lg:max-w-lg"
+  >
     <Image
       src={portraitDrImage}
       alt="Dr. Guillermo Terrado"
-      class="flex items-baseline align-bottom"
+      class="w-full h-auto"
       widths={[300, 600, 1200]}
       sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
       format="png"
