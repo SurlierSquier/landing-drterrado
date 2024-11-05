@@ -1,18 +1,13 @@
 ---
 // Información del Dr. Guillermo Terrado y su especialización
+import { Image } from "astro:assets";
+import portraitDrImage from "../../public/img/portraitDr.png"; // Ajusta la ruta si es necesario
 ---
 
 <section
   id="hero"
   class="relative grid grid-cols-2 grid-rows-1 gap-10 text-center items-center bg-transparent px-10 place-items-center"
 >
-  <div class="col-start-2 row-start-1 relative">
-    <img
-      src="img/portraitDr.png"
-      alt="Dr. Guillermo Terrado"
-      class="flex items-baseline align-bottom"
-    />
-  </div>
   <div class="flex col-start-1 flex-col mx-5">
     <h1 class="text-6xl text-left font-bold text-white pb-5">
       Dr. Guillermo Terrado
@@ -39,5 +34,16 @@
     >
       <strong>Reservar Consulta</strong>
     </a>
+  </div>
+  <div class="col-start-2 row-start-1 relative">
+    <Image
+      src={portraitDrImage}
+      alt="Dr. Guillermo Terrado"
+      class="flex items-baseline align-bottom"
+      widths={[300, 600, 1200]}
+      sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
+      format="png"
+      loading="eager"
+    />
   </div>
 </section>

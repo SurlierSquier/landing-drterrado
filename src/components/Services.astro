@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import sonografiaImage from "../../public/img/sonografia.png";
+---
+
 <section id="services" class="bg-gray-50 py-12">
   <div class="container mx-auto px-4">
     <!-- Título y descripción -->
@@ -16,10 +21,13 @@
 
     <!-- Imagen principal -->
     <div class="mb-8">
-      <img
-        src="/img/sonografia.png"
+      <Image
+        src={sonografiaImage}
         alt="Sonografia"
         class="w-full h-auto object-cover rounded-lg shadow-md"
+        widths={[300, 600, 1200]}
+        sizes="(max-width: 600px) 300px, (max-width: 1200px) 600px, 1200px"
+        format="png"
       />
     </div>
 
