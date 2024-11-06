@@ -5,14 +5,42 @@ interface Props {
 
 const { title } = Astro.props;
 import "../styles/global.css";
+
+const description =
+  "Dr. Guillermo Terrado - Médico especialista en Medicina Reproductiva con más de 30 años de experiencia ayudando a parejas a cumplir su sueño de ser padres. Consulta en Alicante, España.";
+const canonicalURL = "https://drterrado.com";
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <!-- SEO tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Dr. Guillermo Terrado" />
+    <meta
+      name="keywords"
+      content="medicina reproductiva, fertilidad, reproducción asistida, ginecología, obstetricia, Alicante, España"
+    />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/img/portraitDr.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/img/portraitDr.png" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
@@ -20,4 +48,5 @@ import "../styles/global.css";
     <slot />
   </body>
 </html>
+
 <style is:global></style>
