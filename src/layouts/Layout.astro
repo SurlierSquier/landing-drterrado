@@ -6,43 +6,77 @@ interface Props {
 const { title } = Astro.props;
 import "../styles/global.css";
 
+// Mejores constantes para SEO
+const siteName = "Dr. Guillermo Terrado";
 const description =
   "Dr. Guillermo Terrado - Médico especialista en Medicina Reproductiva con más de 30 años de experiencia ayudando a parejas a cumplir su sueño de ser padres. Consulta en Alicante, España.";
-const canonicalURL = "https://drterrado.com";
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  "https://drterrado.com"
+).toString();
+const socialImageURL = new URL(
+  "/img/portraitDr.png",
+  "https://drterrado.com"
+).toString();
 ---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <meta name="description" content={description} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- SEO tags -->
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Dr. Guillermo Terrado" />
     <meta
       name="keywords"
-      content="medicina reproductiva, fertilidad, reproducción asistida, ginecología, obstetricia, Alicante, España"
+      content="medicina reproductiva, fertilidad, reproducción asistida, ginecología, obstetricia, tratamientos de fertilidad, Alicante, España, Dr. Terrado, embarazo"
     />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={`${title} | ${siteName}`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/img/portraitDr.png" />
+    <meta property="og:image" content={socialImageURL} />
+    <meta
+      property="og:image:alt"
+      content="Dr. Guillermo Terrado - Especialista en Medicina Reproductiva"
+    />
+    <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/img/portraitDr.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@drterrado" />
+    <meta name="twitter:creator" content="@drterrado" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={`${title} | ${siteName}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL} />
+    <meta
+      name="twitter:image:alt"
+      content="Dr. Guillermo Terrado - Especialista en Medicina Reproductiva"
+    />
 
+    <!-- Favicon y Apple Touch Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Título -->
+    <title>{`${title} | ${siteName}`}</title>
   </head>
   <body>
     <slot />
