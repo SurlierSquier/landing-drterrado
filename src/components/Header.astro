@@ -78,6 +78,18 @@ const menuItems = [
 <style>
   header {
     transition: all 0.3s ease;
+    animation: slideDown 0.8s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   header.scrolled .md\:block div > div > div {
