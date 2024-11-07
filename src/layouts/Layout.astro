@@ -22,7 +22,7 @@ const socialImageURL = new URL(
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
   <head>
     <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
@@ -83,7 +83,11 @@ const socialImageURL = new URL(
     <slot />
     <script>
       import setupScrollAnimations from "../utils/animations";
-      document.addEventListener("DOMContentLoaded", setupScrollAnimations);
+      document.addEventListener("DOMContentLoaded", () => {
+        setupScrollAnimations();
+        // Agregamos scroll-smooth después de la carga inicial
+        document.documentElement.classList.add("scroll-smooth");
+      });
     </script>
     <script>
       window.onbeforeunload = function () {
@@ -96,4 +100,8 @@ const socialImageURL = new URL(
   </body>
 </html>
 
-<style is:global></style>
+<style is:global>
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+</style>
