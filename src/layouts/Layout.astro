@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import "../styles/global.css";
+import "../styles/animations.css";
 
 // Mejores constantes para SEO
 const siteName = "Dr. Guillermo Terrado";
@@ -80,6 +81,10 @@ const socialImageURL = new URL(
   </head>
   <body>
     <slot />
+    <script>
+      import setupScrollAnimations from "../utils/animations";
+      document.addEventListener("DOMContentLoaded", setupScrollAnimations);
+    </script>
   </body>
 </html>
 
