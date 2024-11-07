@@ -20,14 +20,16 @@
         {
           [
             {
-              name: "Irema",
+              title: "Irema",
+              alt: "Logo del Centro de Fertilidad Irema",
               logo: "/img/logoIrema.webp",
               url: "https://www.irema.org/",
               description: "Centro de Medicina Reproductiva",
               location: "Gandia y Beniarbeig, España",
             },
             {
-              name: "Fertility Benidorm",
+              title: "Fertility Benidorm",
+              alt: "Logo del Centro de Fertilidad Fertility Benidorm",
               logo: "/img/logoFertilityBenidorm.png",
               url: "https://fertilitybenidorm.com/",
               description: "Clínica de Reproducción Asistida",
@@ -45,7 +47,8 @@
                   <div class="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
                   <img
                     src={centro.logo}
-                    alt={centro.name}
+                    title={centro.title}
+                    alt={centro.alt}
                     class="h-28 md:h-32 lg:h-36 object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
