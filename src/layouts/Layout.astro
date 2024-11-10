@@ -5,6 +5,7 @@ interface Props {
 
 const { title } = Astro.props;
 import "../styles/global.css";
+import "aos/dist/aos.css";
 
 // Mejores constantes para SEO
 const siteName = "Dr. Guillermo Terrado";
@@ -76,10 +77,18 @@ const socialImageURL = new URL(
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
     <!--     <link rel="manifest" href="/site.webmanifest" /> -->
     <!-- Título -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>{`${title}`}</title>
   </head>
   <body>
     <slot />
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
   </body>
 </html>
 
