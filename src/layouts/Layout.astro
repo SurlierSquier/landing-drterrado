@@ -22,7 +22,7 @@ const socialImageURL = new URL(
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <!-- Metadatos básicos -->
     <meta charset="UTF-8" />
@@ -88,15 +88,19 @@ const socialImageURL = new URL(
         duration: 1000,
         once: true,
       });
-    </script>
-    <script>
-      import { initScrollReset } from "@components/ts/scrollReset";
-      initScrollReset();
+
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      };
     </script>
   </body>
 </html>
 
 <style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
   .scroll-smooth {
     scroll-behavior: smooth;
   }
