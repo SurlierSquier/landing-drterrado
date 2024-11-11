@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props;
 import "../styles/global.css";
 import "aos/dist/aos.css";
+import { initScrollReset } from "../components/scrollReset";
 
 // Mejores constantes para SEO
 const siteName = "Dr. Guillermo Terrado";
@@ -89,27 +90,7 @@ const socialImageURL = new URL(
         once: true,
       });
 
-      // Controlar el comportamiento del scroll en la recarga
-      if (history.scrollRestoration) {
-        history.scrollRestoration = "manual";
-      }
-
-      function scrollToTop() {
-        document.documentElement.style.scrollBehavior = "auto";
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-          document.documentElement.style.scrollBehavior = "smooth";
-        }, 50);
-      }
-
-      // Aplicar al cargar la página
-      window.addEventListener("load", scrollToTop);
-
-      // Aplicar antes de recargar
-      window.addEventListener("beforeunload", () => {
-        document.documentElement.style.scrollBehavior = "auto";
-        window.scrollTo(0, 0);
-      });
+      initScrollReset();
     </script>
   </body>
 </html>
