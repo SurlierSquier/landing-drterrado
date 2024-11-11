@@ -11,8 +11,10 @@ const menuItems = [
 <header class="fixed z-50 w-full">
   <nav class="relative w-full max-w-6xl mx-auto">
     <!-- Versión móvil (círculo flotante) -->
-    <div class="md:hidden fixed top-4 right-4 max-w-[100vw]">
-      <div class="relative">
+    <div
+      class="md:hidden absolute top-4 right-4 w-full max-w-[100vw] z-50 px-4"
+    >
+      <div class="relative flex justify-end">
         <button
           class="w-12 h-12 bg-blue-700/70 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700/80 transition-all duration-300"
           aria-label="Menú"
