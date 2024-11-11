@@ -1,6 +1,6 @@
 ---
 const menuItems = [
-  { href: "#hero", label: "Inicio" },
+  { href: "#hero", label: "Incio" },
   { href: "#sobre-mi", label: "Sobre Mí" },
   { href: "#services", label: "Servicios" },
   { href: "#testimonials", label: "Testimonios" },
@@ -8,13 +8,11 @@ const menuItems = [
 ];
 ---
 
-<header class="fixed z-50 w-full">
-  <nav class="relative w-full max-w-6xl mx-auto">
+<header class="fixed z-50 md:top-0 md:left-0 md:right-0 md:px-4 md:py-4">
+  <nav class="md:max-w-6xl mx-auto">
     <!-- Versión móvil (círculo flotante) -->
-    <div
-      class="md:hidden absolute top-4 right-4 w-full max-w-[100vw] z-50 px-4"
-    >
-      <div class="relative flex justify-end">
+    <div class="md:hidden fixed top-4 right-4">
+      <div class="relative">
         <button
           class="w-12 h-12 bg-blue-700/70 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700/80 transition-all duration-300"
           aria-label="Menú"
@@ -123,7 +121,6 @@ const menuItems = [
   const menuButton = document.getElementById("menu-button-mobile");
   const mobileMenu = document.getElementById("mobile-menu");
   let menuOpen = false;
-
   // Manejo del scroll
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
@@ -132,7 +129,6 @@ const menuItems = [
       header?.classList.remove("scrolled");
     }
   });
-
   // Toggle del menú móvil
   menuButton?.addEventListener("click", () => {
     menuOpen = !menuOpen;
@@ -142,7 +138,6 @@ const menuItems = [
       mobileMenu?.classList.remove("show");
     }
   });
-
   // Cerrar menú al hacer click fuera
   document.addEventListener("click", (e) => {
     if (
@@ -153,7 +148,6 @@ const menuItems = [
       mobileMenu?.classList.remove("show");
     }
   });
-
   // Navegación suave
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e: Event) {
