@@ -2,25 +2,19 @@
  * Controla el comportamiento del scroll en la carga y recarga de la página
  */
 export function initScrollReset() {
-  // Controlar el comportamiento del scroll en la recarga
+  // Desactiva el comportamiento de restauración de scroll en el navegador
   if (history.scrollRestoration) {
     history.scrollRestoration = "manual";
   }
 
   function scrollToTop() {
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }, 50);
+    document.documentElement.style.scrollBehavior = "auto"; // Desactiva smooth scroll temporalmente
+    window.scrollTo(0, 0); // Lleva al inicio instantáneamente
   }
 
-  // Aplicar al cargar la página
+  // Aplicar al cargar la página sin smooth scroll
   window.addEventListener("load", scrollToTop);
 
-  // Aplicar antes de recargar
-  window.addEventListener("beforeunload", () => {
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo(0, 0);
-  });
+  // Aplicar antes de recargar para evitar el smooth scroll
+  window.addEventListener("beforeunload", scrollToTop);
 }
