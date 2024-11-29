@@ -1,20 +1,18 @@
-# Astro Starter Kit: Basics
+# Landing Page: Dr. Guillermo Terrado
 
-```sh
-npm create astro@latest -- --template basics
-```
+Esta es la landing page oficial del Dr. Guillermo Terrado, un médico especialista en Medicina Reproductiva con más de 30 años de experiencia ayudando a parejas a cumplir su sueño de ser padres.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🌐 URL del Proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[https://drguillermoterrado.com](https://drguillermoterrado.com)
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 🖼️ Vista Previa
 
-## 🚀 Project Structure
+![Vista previa de la página](./public/preview.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Estructura del Proyecto
+
+La estructura principal del proyecto es la siguiente:
 
 ```text
 /
@@ -22,33 +20,35 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   ├── Header.astro        # Barra de navegación
+│   │   ├── Hero.astro          # Sección principal
+│   │   ├── SobreMi.astro       # Información profesional
+│   │   ├── Services.astro      # Servicios ofrecidos
+│   │   ├── Testimonials.astro  # Testimonios de pacientes
+│   │   ├── Centros.astro       # Centros medicos
+│   │   └── Contact.astro       # Formulario de contacto
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── Layout.astro        # Layout base del proyecto
 │   └── pages/
-│       └── index.astro
+│       └── index.astro         # Página principal
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ✨ Características de la Landing Page
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+    •	Barra de Navegación: Incluye enlaces a las secciones: Inicio, Sobre Mí, Servicios, Testimonios y Contacto.
+    •	Sección Hero: Presenta al Dr. Guillermo Terrado junto a un breve resumen de su especialidad.
+    •	Servicios: Lista los servicios de medicina reproductiva.
+    •	Testimonios: Comentarios reales de pacientes que han sido atendidos por el doctor.
+    •	Formulario de Contacto: Facilita la reserva de consultas.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🌟 Tecnologías Utilizadas
 
-## 🧞 Commands
+    •	Astro: Framework principal para construir el sitio.
+    •	TailwindCSS: Para estilos modernos y responsivos.
+    •	HTML5 y CSS3: Base del diseño.
+    •	JavaScript: Para funcionalidades interactivas.
 
-All commands are run from the root of the project, from a terminal:
+## 👀 Más Información
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Para más detalles sobre el Dr. Guillermo Terrado y sus servicios, visita la página oficial: drguillermoterrado.com.
