@@ -54,4 +54,4 @@ La estructura principal del proyecto es la siguiente:
 
 ## 👀 Más Información
 
-Para más detalles sobre el Dr. Guillermo Terrado y sus servicios, visita la página oficial: drguillermoterrado.com.
+Para más detalles sobre el Dr. Guillermo Terrado y sus servicios, visita la página oficial: https://drguillermoterrado.com.
