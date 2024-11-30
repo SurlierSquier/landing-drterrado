@@ -101,8 +101,10 @@ const socialImageURL = new URL(
         once: true,
       });
 
-      window.onbeforeunload = function () {
+      window.onload = function () {
+        this.document.documentElement.style.scrollBehaviour = "auto";
         window.scrollTo(0, 0);
+        this.document.documentElement.style.scrollBehaviour = "smooth";
       };
     </script>
   </body>
