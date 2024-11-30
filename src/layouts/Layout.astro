@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string;
+  title: "Dr. Guillermo Terrado";
 }
 
 const { title } = Astro.props;
@@ -34,6 +34,7 @@ const socialImageURL = new URL(
     <meta name="theme-color" content="#ffffff" />
 
     <!-- SEO tags -->
+
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="author" content="Dr. Guillermo Terrado" />
     <meta
@@ -99,11 +100,12 @@ const socialImageURL = new URL(
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <meta name="apple-mobile-web-app-title" content="drterrado" />
+    <meta name="apple-mobile-web-app-title" content="DrTerrado" />
 
     <!-- Título -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>{`${title}`}</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body class="bg-transparent w-full">
     <slot />
