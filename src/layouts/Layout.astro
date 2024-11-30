@@ -101,6 +101,10 @@ const socialImageURL = new URL(
         once: true,
       });
 
+      if (history.scrollRestoration) {
+        history.scrollRestoration = "manual";
+      }
+
       window.onload = function () {
         this.document.documentElement.style.scrollBehaviour = "auto";
         window.scrollTo(0, 0);
