@@ -1,1 +1,17 @@
-{"projectId":"prj_v2iubmMwLob1CFxMssyr5DgmzSUy","orgId":"team_cVsHTFneVLIu2Wc7GME5VJh2"}
+{
+    "projectId": "prj_v2iubmMwLob1CFxMssyr5DgmzSUy",
+    "orgId": "team_cVsHTFneVLIu2Wc7GME5VJh2",
+
+    "redirects": [
+      {
+        "source": "http://drguillermoterrado.com",
+        "destination": "https://www.drguillermoterrado.com",
+        "permanent": true
+      },
+      {
+        "source": "https://drguillermoterrado.com",
+        "destination": "https://www.drguillermoterrado.com",
+        "permanent": true
+      }
+    ]
+  }
